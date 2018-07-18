@@ -1,0 +1,5 @@
+-- Test function pgmigrations.ls_dir()
+\i tests/sql/setup/init.sql
+\set ECHO errors
+1..1
+ok 1 - should return same files as PG_LS_DIR (defaults)

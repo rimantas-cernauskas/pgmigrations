@@ -1,0 +1,6 @@
+-- Test function pgmigrations.upgrade
+\i tests/sql/setup/init.sql
+\set ECHO errors
+1..1
+NOTICE:  No "up.sql" script found, skipping migration "01"
+ok 1 - pgmigrations.upgrade() should return pgmigrations.migrations_info() query

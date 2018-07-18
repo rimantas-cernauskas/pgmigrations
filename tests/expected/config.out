@@ -1,0 +1,12 @@
+-- Test function pgmigrations.config()
+\i tests/sql/setup/init.sql
+\set ECHO errors
+1..8
+ok 1 - superuser should be able to create new config entry
+ok 2 - superuser should be able to read existing config entry
+ok 3 - superuser should be able to update existing config entry
+ok 4 - value should be updated
+ok 5 - should throw exception when accessing non existing value
+ok 6 - setup - add expected configuration entry
+ok 7 - unprivileged user should be able to read existing config entry
+ok 8 - should throw exception when attempting to create config option as unprivileged user

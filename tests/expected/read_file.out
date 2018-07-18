@@ -1,0 +1,7 @@
+-- Test function pgmigrations.read_file
+\i tests/sql/setup/init.sql
+\set ECHO errors
+1..3
+ok 1 - read_file() should throw exception when called as unprivileged user
+ok 2 - read_file() should return file content when called as super user
+ok 3 - read_file() should return NULL when file does not exist

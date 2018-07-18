@@ -1,0 +1,10 @@
+-- Test function pgmigrations.add_migration
+\i tests/sql/setup/init.sql
+\set ECHO errors
+1..5
+ok 1 - should throw error when called without superuser privileges
+ok 2 - add_migration() should return TRUE when migration is created
+ok 3 - should have expected migration created
+NOTICE:  migration "00" already exists
+ok 4 - add_migration() should return FALSE when adding already existing migration
+ok 5 - add_migration() should return TRUE when adding with "up" script only

@@ -1,0 +1,18 @@
+-- Test function pgmigrations.apply_migrations
+\i tests/sql/setup/init.sql
+\set ECHO errors
+1..14
+ok 1 - should add migration "00"
+ok 2 - should add migration "01"
+ok 3 - should add migration "02"
+ok 4 - apply_migrations() should return TRUE on successful run
+ok 5 - should get expected migrations info
+ok 6 - Table table0 should exist
+ok 7 - Column table0.id should exist
+ok 8 - Table table2 should exist
+ok 9 - Column table2.id should exist
+ok 10 - should add migration "03"
+ok 11 - apply_migrations() should return TRUE on successful run
+ok 12 - should get expected migrations info
+ok 13 - Table table3 should exist
+ok 14 - Column table3.id should exist

@@ -1,0 +1,6 @@
+-- Test function pgmigrations.validate_script_type()
+\i tests/sql/setup/init.sql
+\set ECHO errors
+1..2
+ok 1 - validate_script_type() should return TRUE when called with existing script type
+ok 2 - should throw exception when called with non exitent script type

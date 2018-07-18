@@ -1,0 +1,15 @@
+SELECT pgmigrations.revoke_privileges('__pgmigrations_testuser');
+ revoke_privileges 
+-------------------
+ t
+(1 row)
+
+SELECT pgmigrations.revoke_privileges('__pgmigrations_superuser');
+ revoke_privileges 
+-------------------
+ t
+(1 row)
+
+-- Remove test roles
+DROP ROLE __pgmigrations_testuser;
+DROP ROLE __pgmigrations_superuser;

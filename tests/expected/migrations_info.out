@@ -1,0 +1,6 @@
+-- Test view pgmigrations.migrations_info
+\i tests/sql/setup/init.sql
+\set ECHO errors
+1..2
+ok 1 - select from migrations_info should return empty table when there are no migrations
+ok 2 - select from migrations_info view should return expected data

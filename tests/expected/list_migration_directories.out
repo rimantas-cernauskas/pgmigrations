@@ -1,0 +1,7 @@
+-- Test function pgmigrations.list_migration_directories()
+\i tests/sql/setup/init.sql
+\set ECHO errors
+1..2
+NOTICE:  table "_pgmigrations_migration_directories" does not exist, skipping
+ok 1 - list_migration_directories() should return expected migration directories
+ok 2 - list_migration_directories() should return empty table when migrations directory does not exist

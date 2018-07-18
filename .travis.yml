@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+install:
+    - docker-compose up --no-start --build
+script:
+    - docker-compose start
+    - docker-compose exec pgmigrations /bin/sh travis.sh
+after_script:
+    - docker-compose down

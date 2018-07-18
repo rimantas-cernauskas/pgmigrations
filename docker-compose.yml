@@ -1,0 +1,8 @@
+version: '3'
+services:
+  pgmigrations:
+    container_name: 'pgmigrations-test'
+    build: .
+    volumes:
+      - ./:/pgmigrations
+    working_dir: /pgmigrations

@@ -1,0 +1,12 @@
+-- Test function pgmigrations.load_migrations
+\i tests/sql/setup/init.sql
+\set ECHO errors
+1..4
+NOTICE:  No "up.sql" script found, skipping migration "01"
+ok 1 - load_migrations() should return TRUE on successful load
+ok 2 - should have migrations added
+NOTICE:  Migration "00" already loaded
+NOTICE:  No "up.sql" script found, skipping migration "01"
+NOTICE:  Migration "02" already loaded
+ok 3 - load_migrations() re-run should return TRUE on successful load
+ok 4 - should have same migrations list

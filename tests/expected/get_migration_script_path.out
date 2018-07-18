@@ -1,0 +1,6 @@
+-- Test function get_migration_script_path()
+\i tests/sql/setup/init.sql
+\set ECHO errors
+1..2
+ok 1 - get_migration_script_path() should return relative path the script
+ok 2 - calling get_migration_script_path() with invalid script type should throw exception

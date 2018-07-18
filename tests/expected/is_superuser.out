@@ -1,0 +1,6 @@
+-- Test function pgmigrations.is_superuser()
+\i tests/sql/setup/init.sql
+\set ECHO errors
+1..2
+ok 1 - should get FALSE for non superuser
+ok 2 - should get TRUE for superuser
