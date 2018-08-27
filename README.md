@@ -12,6 +12,7 @@ Currently project is written in plpgsql language with no runtime dependencies, h
 * run `make install`
 * optionally run `make installcheck` ( requires [pgTAP](https://github.com/theory/pgtap) installation )
 * run `psql YOUR_AWESOME_DATABASE -c "CREATE EXTENSION pgmigrations"`
+* grant required privileges to role for using migration functions: `psql YOUR_AWESOME_DATABASE -c "SELECT pgmigrations.grant_privileges( 'DATABASE_USER_ROLE' );"`
 
 ### Usage
 
