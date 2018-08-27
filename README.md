@@ -3,6 +3,7 @@ ___
 Collection of the plpgsql functions to manage database migrations for [PostgreSQL](https://www.postgresql.org/) databases.
 
 ### Dependencies
+pgmigrations where created for postgreSQL version 10, and while it potentially would work, no previous versions have been tested.
 Currently project is written in plpgsql language with no runtime dependencies, however [pgTAP](https://github.com/theory/pgtap) is required to run unit tests manually or via `make installcheck`.
 
 ### Installation
