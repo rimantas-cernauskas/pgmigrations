@@ -1,11 +1,12 @@
 \echo Use "CREATE EXTENSION pgmigrations" to load this file.\quit
+
 -- setup
 DO LANGUAGE plpgsql $$
 DECLARE
 BEGIN
     -- create pgmigrations schema
     RAISE NOTICE 'Creating pgmigrations';
-    CREATE SCHEMA pgmigrations;
+    CREATE SCHEMA IF NOT EXISTS pgmigrations;
 
     -- create pgmigrations.settings table
     -- to store various configuration options
@@ -14,6 +15,9 @@ BEGIN
          name  TEXT UNIQUE NOT NULL
         ,value TEXT NOT NULL
     );
+
+    -- Mark table as extension config
+    PERFORM pg_catalog.pg_extension_config_dump('pgmigrations.config', '');
 
     -- set default configuration
     RAISE NOTICE 'Populating settings';
@@ -76,6 +80,9 @@ BEGIN
                         NOT NULL
                         DEFAULT(current_timestamp)
     );
+
+    -- Mark table as extension config
+    PERFORM pg_catalog.pg_extension_config_dump('pgmigrations.migrations', '');
 
     -- create pgmigrations.scripts table to store up/down etc script
     -- content and reference to migration

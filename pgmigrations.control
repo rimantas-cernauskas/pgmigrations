@@ -1,4 +1,6 @@
 # pgmigrations extension
 comment = 'collection of functions to dealt with database migrations inside of the database'
-default_version = '0.9.0'
-relocatable = true
+default_version = '0.9.1'
+superuser = true
+requires = 'plpgsql'
+schema = 'pgmigration'
