@@ -1,0 +1,11 @@
+-- Test function pgmigrations.rollback_migration
+\i tests/sql/setup/init.sql
+\set ECHO errors
+1..7
+ok 1 - should add migration "00"
+ok 2 - should add migration "01"
+ok 3 - upgrade_migration() should return TRUE on successful run
+ok 4 - Table table0 should exist
+ok 5 - Column table0.id should exist
+ok 6 - Table table1 should not exist
+ok 7 - should get expected migrations info
