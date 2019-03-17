@@ -18,9 +18,9 @@ Currently project is written in plpgsql language with no runtime dependencies, h
 
 * Create migrations directory for your database in $PGDATA dir: `mkdir -p $PGDATA\migrations\MY_AWESOME_DATABASE`
 * Create migration script directories and upgrade/donwgrade scripts. Migration is defined by directory name and is applied in an alphabetical order, so choose some reasonable naming convention, like 000,001,002,003 etc. Migration scripts must be named `up.sql` for upgrade script and `down.sql` for downgrade (upgrade script is required, while downgrade is optional)
-  * `mkdir $PGDATA\migrations\MY_AWESOME_DATABASE\000`
-  * `echo "CREATE TABLE FOO(id SERIAL);" > $PGATA\migrations\MY_AWESOME_DATABASE\000\up.sql`
-  * `echo "DROP TABLE FOO;" > $PGDATA\migrations\MY_AWESOME_DATABASE\000\down.sql`
+  * `mkdir $PGDATA/migrations/MY_AWESOME_DATABASE/000`
+  * `echo "CREATE TABLE FOO(id SERIAL);" > $PGATA/migrations/MY_AWESOME_DATABASE/000/up.sql`
+  * `echo "DROP TABLE FOO;" > $PGDATA/migrations/MY_AWESOME_DATABASE/000/down.sql`
 * Apply migrations by calling `pgmigrations.upgrade()` function:
   * `psql MY_AWESOME_DATABASE -c "SELECT pgmigrations.upgrade();"
 * (Optional) Check migration status by inspecting results of `pgmigrations.migrations_info` view:
